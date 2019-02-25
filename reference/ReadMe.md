@@ -1,0 +1,4 @@
+- IOSCOPD21.pdf : [Clearing And Settlement in Emerging Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD21.pdf)
+- Blueprint for the Future of UK Payments.pdf: [Blueprint for the Future of UK Payments](https://implementation.paymentsforum.uk/sites/default/files/Consultation%20Document.pdf)
+- target2.pdf : [TARGET2-SECURITIES THE BLUEPRINT](https://www.ecb.europa.eu/pub/pdf/other/t2sblueprint0703en.pdf?b49eeb389d1fe47bf5e8dcccc0cf3587)
+- payment_for_Europe.pdf : [Instant retail payments for Europe: a Blueprint](https://www.wsbi-esbg.org/SiteCollectionDocuments/1159.pdf)
