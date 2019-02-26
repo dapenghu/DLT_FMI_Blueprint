@@ -13,11 +13,11 @@
 
 - Accenture Research: [Blockchain Technology: Preparing for Change](https://www.accenture.com/t20160608T052656__w__/us-en/_acnmedia/PDF-5/Accenture-2016-Top-10-Challenges-04-Blockchain-Technology.pdf)
 
-   <center><img src="future_capital_markets.png" alt="drawing" width="400"/>
+   <center><img src="future_capital_markets.png" alt="drawing" width="400"/></center>
 
-   <img src="settlemnt_days.png" alt="drawing" width="400"/>
+   <center><img src="settlemnt_days.png" alt="drawing" width="400"/></center>
 
-   <img src="adoption.png" alt="drawing" width="400"/></center>
+   <center><img src="adoption.png" alt="drawing" width="400"/></center>
 
 ## Clearing and Settlement
 - IOSCOPD21.pdf : [Clearing And Settlement in Emerging Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD21.pdf)
