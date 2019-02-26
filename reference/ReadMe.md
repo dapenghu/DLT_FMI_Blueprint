@@ -11,9 +11,9 @@
 
 - Accenture Research: [Blockchain Technology: Preparing for Change](https://www.accenture.com/t20160608T052656__w__/us-en/_acnmedia/PDF-5/Accenture-2016-Top-10-Challenges-04-Blockchain-Technology.pdf)
 
-    ![](future_capital_markets.png)
-    ![](settlemnt_days.png)
-    ![](adoption.png)
+   <center><img src="future_capital_markets.png" alt="drawing" width="400"/>
+   <img src="settlemnt_days.png" alt="drawing" width="400"/>
+   <img src="adoption.png" alt="drawing" width="400"/></center>
 
 ## Clearing and Settlement
 - IOSCOPD21.pdf : [Clearing And Settlement in Emerging Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD21.pdf)
@@ -57,7 +57,7 @@
 - [International Clearing and Settlement](https://www.princeton.edu/~ota/disk2/1990/9043/904308.PDF)
 
 - [Capital Market - Clearing and Settlement](https://www.nseindia.com/education/resources/download/ismr2009ch5.pdf)
-    ![](post_trade.png)
+   <center><img src="post_trade.png" alt="drawing" width="400"/>
 
 ## Regulation
 - [Real-Time Regulation and Blockchain Data](https://static1.squarespace.com/static/59234cbd6a496341d7c59306/t/597feb7d8419c2fefbe7e60b/1501555585537/Bandman+keynote+July+20%2C+2017+P2PFISY+-+Final+for+Publication.pdf)
