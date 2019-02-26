@@ -1,3 +1,5 @@
+# Reports and Papers About 
+
 ## General Finance
 - CENTRAL BANK OF MALAYSIA : [FINANCIAL SECTOR BLUEPRINT 2011-2020](http://www.bnm.gov.my/files/publication/fsbp/en/BNM_FSBP_FULL_en.pdf)
 
@@ -12,7 +14,9 @@
 - Accenture Research: [Blockchain Technology: Preparing for Change](https://www.accenture.com/t20160608T052656__w__/us-en/_acnmedia/PDF-5/Accenture-2016-Top-10-Challenges-04-Blockchain-Technology.pdf)
 
    <center><img src="future_capital_markets.png" alt="drawing" width="400"/>
+
    <img src="settlemnt_days.png" alt="drawing" width="400"/>
+
    <img src="adoption.png" alt="drawing" width="400"/></center>
 
 ## Clearing and Settlement
@@ -27,11 +31,11 @@
 
 - payment_for_Europe.pdf : [Instant retail payments for Europe: a Blueprint](https://www.wsbi-esbg.org/SiteCollectionDocuments/1159.pdf)
 
-- 关于支付国际化: [A New Blueprint for Global Instant Payments](https://iconsolutions.com/blog/beyond-babel-new-blueprint-global-instant-payments-part-1/)
+- About Global Instant Payment: [A New Blueprint for Global Instant Payments](https://iconsolutions.com/blog/beyond-babel-new-blueprint-global-instant-payments-part-1/)
 
 - Federal Reserve : [Strategies for Improving the U.S. Payment System](https://fedpaymentsimprovement.org/wp-content/uploads/strategies-improving-us-payment-system.pdf)
 
-- [Cross-Border Clearing and Settlement Arrangements in the European Union](https://ec.europa.eu/info/system/files/first_giovannini_report_en.pdf)
+- EUROPEAN COMMISSION: [Cross-Border Clearing and Settlement Arrangements in the European Union](https://ec.europa.eu/info/system/files/first_giovannini_report_en.pdf)
 
 - EUROPEAN COMMISSION : [Cross-border clearing and settlement arrangements in the European Union](http://ec.europa.eu/economy_finance/publications/pages/publication1950_en.pdf)
 
