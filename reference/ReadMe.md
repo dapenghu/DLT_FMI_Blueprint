@@ -7,12 +7,20 @@
 
 - European Parliamentary Research Service : [Distributed ledger technology and financial markets](http://www.europarl.europa.eu/RegData/etudes/BRIE/2016/593565/EPRS_BRI(2016)593565_EN.pdf)
 
-- [Developing Blockchain Real-Time Clearing and Settlement in the EU, U.S., and Globally](http://cjel.law.columbia.edu/preliminary-reference/2016/developing-blockchain-real-time-clearing-and-settlement-in-the-eu-u-s-and-globally-2/)
+- Santander InnoVentures, Oliver Wyman and Anthemis Group: [The Fintech 2.0 Paper: rebooting financial services](http://santanderinnoventures.com/wp-content/uploads/2015/06/The-Fintech-2-0-Paper.pdf)
+
+- Accenture Research: [Blockchain Technology: Preparing for Change](https://www.accenture.com/t20160608T052656__w__/us-en/_acnmedia/PDF-5/Accenture-2016-Top-10-Challenges-04-Blockchain-Technology.pdf)
+
+    ![](future_capital_markets.png)
+    ![](settlemnt_days.png)
+    ![](adoption.png)
 
 ## Clearing and Settlement
 - IOSCOPD21.pdf : [Clearing And Settlement in Emerging Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD21.pdf)
 
 - Bank Of England:  [A blueprint for a new RTGS service for the United Kingdom](https://www.bankofengland.co.uk/-/media/boe/files/payments/a-blueprint-for-a-new-rtgs-service-for-the-uk)
+
+- [Developing Blockchain Real-Time Clearing and Settlement in the EU, U.S., and Globally](http://cjel.law.columbia.edu/preliminary-reference/2016/developing-blockchain-real-time-clearing-and-settlement-in-the-eu-u-s-and-globally-2/)
 
 ## Payment
 - Blueprint for the Future of UK Payments.pdf: [Blueprint for the Future of UK Payments](https://implementation.paymentsforum.uk/sites/default/files/Consultation%20Document.pdf)
@@ -65,6 +73,8 @@
 ## Digital Identity
 - Deloitte : [A blueprint for digital identity](https://www2.deloitte.com/content/dam/Deloitte/global/Documents/Financial-Services/gx-fsi-digital-identity-online.pdf)
 
+- [Digital-Identity-of-Legal-Entities: Current-Status-and-Way-Forward_Journal-of-Payments](https://www.gleif.org/_documents/blog/20180530-the-use-of-the-legal-entity-identifier-in-payment-systems/Gerard-Hartsink_The-Digital-Identity-of-Legal-Entities_Current-Status-and-Way-Forward_Journal-of-Payments-Strategies&Systems_Volume12_Number1.pdf)
+
 ## Standard
 - Book: ISO 20022 Dummies
 - [Understanding ISO 20022](https://fedpaymentsimprovement.org/wp-content/uploads/understanding-iso-20022.pdf)
@@ -82,3 +92,7 @@
 - [CROSS BORDER CLEARANCE SETTLEMENT AND CUSTODY]()
 
 - [book118](https://max.book118.com/)
+
+## Research
+
+- [R3 Research Papers](https://www.r3.com/research/)
