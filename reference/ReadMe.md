@@ -13,11 +13,11 @@
 
 - Accenture Research: [Blockchain Technology: Preparing for Change](https://www.accenture.com/t20160608T052656__w__/us-en/_acnmedia/PDF-5/Accenture-2016-Top-10-Challenges-04-Blockchain-Technology.pdf)
 
-   <center><img src="future_capital_markets.png" alt="drawing" width="600"/></center>
+- <center><img src="future_capital_markets.png" alt="drawing" width="500"/></center>
 
-   <center><img src="settlemnt_days.png" alt="drawing" width="600"/></center>
+- <center><img src="settlemnt_days.png" alt="drawing" width="500"/></center>
 
-   <center><img src="adoption.png" alt="drawing" width="600"/></center>
+- <center><img src="adoption.png" alt="drawing" width="500"/></center>
 
 ## Clearing and Settlement
 - IOSCOPD21.pdf : [Clearing And Settlement in Emerging Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD21.pdf)
@@ -26,10 +26,14 @@
 
 - [Developing Blockchain Real-Time Clearing and Settlement in the EU, U.S., and Globally](http://cjel.law.columbia.edu/preliminary-reference/2016/developing-blockchain-real-time-clearing-and-settlement-in-the-eu-u-s-and-globally-2/)
 
+- [Clearing House Interbank Payments System (CHIPS)](https://www.investopedia.com/terms/clearing-house-interbank-payments-system-chips.asp)
+
+- [ACH Network Moves 23 Billion Payments and $51 Trillion in 2018](https://www.nacha.org/news/ach-network-moves-23-billion-payments-and-51-trillion-2018)
+
 ## Payment
 - Blueprint for the Future of UK Payments.pdf: [Blueprint for the Future of UK Payments](https://implementation.paymentsforum.uk/sites/default/files/Consultation%20Document.pdf)
 
-- payment_for_Europe.pdf : [Instant retail payments for Europe: a Blueprint](https://www.wsbi-esbg.org/SiteCollectionDocuments/1159.pdf)
+- payment for Europe.pdf : [Instant retail payments for Europe: a Blueprint](https://www.wsbi-esbg.org/SiteCollectionDocuments/1159.pdf)
 
 - About Global Instant Payment: [A New Blueprint for Global Instant Payments](https://iconsolutions.com/blog/beyond-babel-new-blueprint-global-instant-payments-part-1/)
 
@@ -61,9 +65,10 @@
 - [International Clearing and Settlement](https://www.princeton.edu/~ota/disk2/1990/9043/904308.PDF)
 
 - [Capital Market - Clearing and Settlement](https://www.nseindia.com/education/resources/download/ismr2009ch5.pdf)
-   <center><img src="post_trade.png" alt="drawing" width="600"/>
 
-## Regulation
+- <center><img src="post_trade.png" alt="drawing" width="500"/>
+
+## Regulation And Compliance
 - [Real-Time Regulation and Blockchain Data](https://static1.squarespace.com/static/59234cbd6a496341d7c59306/t/597feb7d8419c2fefbe7e60b/1501555585537/Bandman+keynote+July+20%2C+2017+P2PFISY+-+Final+for+Publication.pdf)
 
 - [Swift - Financial crime compliance services](https://www.swift.com/our-solutions/compliance-and-shared-services/financial-crime-compliance)
@@ -81,6 +86,7 @@
 
 ## Standard
 - Book: ISO 20022 Dummies
+
 - [Understanding ISO 20022](https://fedpaymentsimprovement.org/wp-content/uploads/understanding-iso-20022.pdf)
 
 ## Book
