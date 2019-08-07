@@ -13,11 +13,11 @@
 
 - Accenture Research: [Blockchain Technology: Preparing for Change](https://www.accenture.com/t20160608T052656__w__/us-en/_acnmedia/PDF-5/Accenture-2016-Top-10-Challenges-04-Blockchain-Technology.pdf)
 
-- <center><img src="future_capital_markets.png" alt="drawing" width="500"/></center>
+- <center><img src="images/future_capital_markets.png" alt="drawing" width="500"/></center>
 
-- <center><img src="settlemnt_days.png" alt="drawing" width="500"/></center>
+- <center><img src="images/settlemnt_days.png" alt="drawing" width="500"/></center>
 
-- <center><img src="adoption.png" alt="drawing" width="500"/></center>
+- <center><img src="images/adoption.png" alt="drawing" width="500"/></center>
 
 ## Clearing and Settlement
 - IOSCOPD21.pdf : [Clearing And Settlement in Emerging Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD21.pdf)
@@ -66,7 +66,7 @@
 
 - [Capital Market - Clearing and Settlement](https://www.nseindia.com/education/resources/download/ismr2009ch5.pdf)
 
-- <center><img src="post_trade.png" alt="drawing" width="500"/>
+- <center><img src="images/post_trade.png" alt="drawing" width="500"/>
 
 ## Regulation And Compliance
 - [Real-Time Regulation and Blockchain Data](https://static1.squarespace.com/static/59234cbd6a496341d7c59306/t/597feb7d8419c2fefbe7e60b/1501555585537/Bandman+keynote+July+20%2C+2017+P2PFISY+-+Final+for+Publication.pdf)
