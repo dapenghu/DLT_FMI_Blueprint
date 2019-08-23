@@ -1,0 +1,148 @@
+% !TEX root = ./main.tex
+\section{账户数据结构}\label{sec:account_structure}
+
+根据第5节的讨论，由于审核权与记账权的分离，账户数据也分为两部分：
+脱敏的资产数据存储在分布式账本上，并且公开，任何人和节点都可以查看，这部分数据包括账户ID，账户资产等；
+另一部分数据由合规机构中心化管理，不对外开放，只有交易的相关方或者监管机构才有权查看，主要包括用户的真实身份相关的隐私数据。
+两部分数据虽然是分离存储和管理的，但是在逻辑上是不可分割的，彼此保持完整性和一致性。本节讨论如何将这两部分数据集成在一起。
+
+\subsection{链下账本数据}
+链下的个人、企业身份信息包含多个维度的数据，不仅包括文本类数据：姓名、性别、出生日期、国家、城市、住址、身份证号码、护照号码、电话号码、邮箱，还包括多媒体数据：照片、音频、视频等等。
+在完成 KYC 审核的过程，用户将这些数据提交给合规机构。
+根据每个司法辖区以及金融业务的具体情况，各个合规机构可以自行决定用户必须提交哪些数据，以及这些数据的存储格式。
+
+在 AML 等合规检查过程中，合规机构不仅需要交易发送方的，同时还需要接受方的身份信息。
+一般情况下交易双方注册的合规机构不是同一家，那么这两个合规机构需要互相通信、交换双方的身份信息。
+这些字段应当使用 ISO 标准的编码方式，以便于数据格式和通信协议的统一。
+下表列出一些相关的ISO标准。更加具体的规范超出了本白皮书的范围，Libra 会另有文档详细描述相关的规范。
+
+\begin{table}[h!]
+    \caption{数据格式标准} 
+    \label{tab:data_format}
+    \small % text size of table content
+    \centering % center the table
+    \begin{tabular}{lrl} % alignment of each column data
+        \toprule[\heavyrulewidth]\toprule[\heavyrulewidth]
+        \textbf{字段} & \textbf{编码长度(字符)} & \textbf{编码格式} \\ 
+        %\midrule
+        \hline
+        语言 & 2 & ISO 639-1 \\
+        \hline
+        国家 & 3 & ISO 3166-1 alpha-3 \\
+        \hline
+        日期 & 10 & ISO 8601 date-only format \\
+        \hline
+        电话 & 可变长度 & E.164 \\
+        \hline
+        职业 & 3 & ISO ISCO08 \\
+        \bottomrule[\heavyrulewidth] 
+    \end{tabular}
+\end{table}
+
+\subsection{链上账户数据}
+类似于以太坊，Libra 账本也是基于账户的数据模型，账户在 Libra 中是最核心的数据结构。
+一个账户地址是一个256位二进制整数，整个账本是以账户地址为索引的 key-value 类型数据库。
+地址对应的 value 是一个数据集合，记录账户的状态和相关数据。
+一般来讲包括 Resource 和 Module 两类数据，Module 是智能合约语言 Move 的二进制代码，Resource 是资产类数据。
+对于本文来讲，我们更加关心合规相关的数据，具体来讲一个账户还包含以下属性：
+
+\begin{itemize}
+    \item[\dag] \textbf{IdentityRoot}: 真实身份信息的 Merkle Root
+
+    通过KYC审核之后，合规机构将用户真实身份的所有字段组织到一个 Merkle Tree 中，获得对应的 Merkle Root，存储在这个属性里。这种数据结构有两个优点：
+    \begin{enumerate}
+        \item 可以将这个 Merkle Root 看做用户身份数据的指纹，用于证明合规机构没有篡改用户身份信息。
+        \item 在有些场景中，并不需要披露所有的身份信息，可以有选择地公开某一部分内容，通过 Merkle Tree 的路径证明验证数据的一致性。
+    \end{enumerate}
+
+    \item[\dag] \textbf{Validator}: 合规机构账户
+
+    这个属性是一个合规机构的 256 位账户地址。
+    除了 Libra 协会的系统账户之外，任何一个账户都是经过KYC注册之后才能建立。这个属性是对应的合规机构的账户地址。
+    对于合规机构来讲，这个属性是 libra 协会的系统账户地址。
+
+    \item[\dag] \textbf{Domain}: 域名
+
+    这个属性是字符串格式的域名。它是可选的，对于普通用户来讲，其账户信息是保密的，所以此属性的值为 NULL。
+    对于具有公信力的权威机构、或者接受公众监督的金融服务机构，他们的账户要提供真实的域名。
+    如果一个账户设置了域名，公开真实身份，这个账户被称为\textbf{知名账户}。例如：
+
+    \begin{itemize}
+        \item Libra 协会成员必须知名账户，负责 Libra 社区治理、验证节点的管理和维护。
+        \item 合规机构必须是知名账户，与其它合规机构合作共同完成 AML 等合规验证。
+        \item 资产发行方必须是知名账户，披露资产的真实信息。
+        \item 慈善机构可以是知名账户，它管理的善款接受公众监督，规避内部运营风险。
+    \end{itemize}
+\end{itemize}
+
+\subsection{知名账户的配置文件 libra.toml}
+知名账户明确通过域名标识自己的真实身份。
+除了域名之外，其它的相关信息记录在一个名为 $libra.toml$ 的配置文件中。
+$libra.toml$ 文件是用 TOML 格式编写的，这是一种简单且广泛使用的配置文件格式。
+$libra.toml$ 文件对应的URL地址是\url{https://<Domain>/.well-known/libra.toml}。
+比如说一个知名账户的域名是 example.com，那么对应的配置文件 URL 是：\url{https://example.com/.well-known/libra.toml}。
+注意：这里使用的是 HTTPS 协议，对应的Web服务器上必须部署 libra 协会为此机构颁发的数字证书。
+
+配置文件 $libra.toml$ 包含非常丰富的内容，不但包括完整的机构相关说明：机构的名称、办公地址、法人代表、公司邮箱、Twitter 等等；
+还可以包括在链下提供的服务相关信息。比如
+
+\begin{itemize}
+    \item 如果账户代表一个 Libra 的记账节点，$libra.toml$ 包含节点的相关信息
+        \begin{itemize}
+            \item DISPLAY\_NAME：用于浏览器和其它API的可读显示名称。
+            \item PUBLIC\_KEY： 与该验证节点关联的公钥。
+            \item HOST: 连接验证节点的域名+端口号
+        \end{itemize}
+        例如：
+        \begin{lstlisting}[caption={记账节点配置信息}, label={lst:validator}]
+        [MINNER]
+        DISPLAY_NAME="Visa USA"
+        HOST="usa.visa.com:30307"
+        PUBLIC_KEY="GAOO3LWBC4XF6VWRP5ESJ6IBHAISVJMSBTALHOQM2EZG7Q477UWA6L7U"
+        \end{lstlisting}
+        
+    \item 如果账户代表一个合规机构，$libra.toml$ 可以声明合规服务相关的信息，比如
+        \begin{itemize}
+            \item DISPLAY\_NAME：用于浏览器和其它API的可读显示名称。
+
+            \item SIGNING\_KEY：合规机构的公钥，使用此公钥验证合规机构的签名。
+            
+            \item KYC\_SERVICE：合规机构对外提供的 KYC 服务地址，客户通过此服务提交材料完成 KYC 审核
+
+            \item AUDIT\_SERVICE：合规机构对外提供的合规服务地址，客户通过此服务提交交易数据，完成AML/CFT检查。
+
+        \end{itemize}
+        例如：
+        \begin{lstlisting}[caption={验证机构配置信息}, label={lst:validator}]
+        [VALIDATOR]
+        DISPLAY_NAME="Citi Bank"
+        KYC_SERVICE="https://www.citi.com/kyc"
+        AUDIT_SERVICE="https://www.citi.com/aml"
+        SIGNING_KEY="SVJMSBTALHOQM2EZG7Q477UWA6L7UGAOO3LWBC4XF6VWRP5ESJ6IBHAI"
+        \end{lstlisting}
+
+    \item 如果账户是一个数字资产智能合约，$libra.toml$ 可以描述此数字资产的相关信息
+        \begin{itemize}
+            \item ASSET\_CODE: 此数字资产的代码(3-5字母)
+            
+            \item ASSET\_DESCRIPTION：此数字资产的描述
+
+            \item ASSET\_LOGO：数字资产的logo图片URL
+
+            \item ASSET\_GITHUB：此数字资产智能合约的源码地址
+
+            \item ASSET\_ISSUER: 此数字资产的发行方账户地址
+        \end{itemize}
+        例如:
+        \begin{lstlisting}[caption={资产配置信息}, label={lst:validator}]
+        [ASSET]
+        ASSET_CODE="LBRT"
+        ASSET_DESCRIPTION="Libra Token"
+        ASSET_LOGO="https://api.cryptorank.io/static/img/coins/libra1561525522731.png"
+        ASSET_GITHUB="https://github.com/libra"
+        ASSET_ISSUER="Libra Association"
+        \end{lstlisting}
+\end{itemize}
+
+$libra.toml$ 文件提供了一种账户信息扩展机制，可以把不适合上链的公开信息和公共服务API注册在此文件里面。
+其它用户、Dapp或者金融机构可以通过解析此文件发现对应的信息。
