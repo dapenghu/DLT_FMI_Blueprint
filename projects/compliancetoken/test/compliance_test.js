@@ -1,16 +1,22 @@
-const ethers = require('ethers');
 var AccountRegistry = artifacts.require("./AccountRegistry.sol");
 let ComplianceToken = artifacts.require("./ComplianceToken.sol");
 var AccountType = require("./AccountType");
 
 contract('ComplianceTest', function(accounts) {
-  var adminAccount = accounts[0];
-  var mgAccount = accounts[1];
-  var citiAccount = accounts[2];
-  var aliceAccount = accounts[3];
-  var bobAccount = accounts[4];
+  // var adminAccount = accounts[0];
+  // var mgAccount = accounts[1];
+  // var citiAccount = accounts[2];
+  // var aliceAccount = accounts[3];
+  // var bobAccount = accounts[4];
 
-  it("Test: trustedTransfer()", async()=>{
+  var adminAccount = "0xa9f30c037398a2fd0822efBBE6CAaa89ED8a50DE";
+  var mgAccount    = "0x4cF966068F765EFfb7b9ee22D223651bF81dd3D4";
+  var citiAccount  = "0x2Eb745aB5478645066996BF6214D17717Eb3E195";
+  var aliceAccount = "0x95897AD092Bd59d3DE04D270b2F654c6Bb0f752f";
+  var bobAccount   = "0x9d4c272363b6156E3b7aA18A824dd9CE3325AB5E";
+
+  it("Test: check accountRegistry address", async()=>{
+    console.log("[Test check accountRegistry address]");
     let complianceToken = await ComplianceToken.deployed();
     let accountRegistry = await AccountRegistry.deployed();
     var addr = await complianceToken.getAccountRegistry();
@@ -130,7 +136,6 @@ contract('ComplianceTest', function(accounts) {
     console.table(balances);
 
     // Alice 转账给 Bob
-    
     // Alice sign the bobAccount and amount(500)
     var data = web3.eth.abi.encodeParameters(["address", "uint256"],[bobAccount, 500]);
     var aliceSignature = await web3.eth.sign(data, aliceAccount);
